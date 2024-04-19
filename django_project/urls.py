@@ -19,10 +19,13 @@ from django.urls import path
 from meusJogosFavoritos import views
 
 urlpatterns = [
-  path('', views.home),
+  path('home', views.home),
   path('admin/', admin.site.urls),
   path('jogos/<int:ranking>', views.jogos),
   path('newjogo', views.newJogo),
   path('editjogo/<int:id>', views.editJogo),
-  path('deljogo/<int:id>', views.delJogo)
+  path('deljogo/<int:id>', views.delJogo),
+  path('', views.inicio),
+  path('login', views.login_usuario),
+  path('logout',views.logout_usuario)
 ]

@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.enums import Choices
+from django.contrib.auth.models import User 
+
 
 # Create your models here.
 
@@ -10,6 +12,7 @@ class Jogo(models.Model):
   descricao = models.TextField()
   data_lancamento = models.DateField()
   nota = models.DecimalField(max_digits=3, decimal_places=1)
+  usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.nome

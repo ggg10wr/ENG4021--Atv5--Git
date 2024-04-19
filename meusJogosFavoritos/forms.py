@@ -5,4 +5,4 @@ from .models import Jogo, Referencia
 class JogoForm(forms.ModelForm):
   class Meta:
     model = Jogo
-    fields = "__all__"
+    exclude = ["usuario"]
