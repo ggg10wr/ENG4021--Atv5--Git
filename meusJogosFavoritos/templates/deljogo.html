@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+
+<p>Você tem ceteza que deseja remover o jogo {{jogo.nome}} do banco de dados?</p>
+  
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Remover</button>
+</form>
+
+</html>

@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  color: lightgreen;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.imagem1{
+  display: flex;
+  justify-content: center;
+}
+
+.links{
+  color: lightgreen;
+}
+
+.miniTitulo{
+  font-size: 20px;
+  color: lightblue;
+}
+
+.tituloLista{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #dd5555;
+  color: green;
+}
+
+.cabecalho{
+  background-color: lightgreen;
+  color: red;
+}
+
+table , th , td{
+  border: 1px solid green;
+  border-collapse: collapse;
+}
+
+.linha1 {
+  background-color: lightgreen;
+  color: black;
+}
+
+.linha2 {
+  background-color: red;
+}
+
+.textoTodo {
+  border-style: solid;
+  border-radius: 10px;
+  border-color: green;
+  padding: 30px;
+  max-width: 2000px;
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

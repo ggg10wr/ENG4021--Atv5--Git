@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class ="textoTodo">
+    <h1>{{titulo}}</h1>
+    <h3 class= "cabecalho">Aluno: Gustavo Braga</h3>
+    <h3 class= "cabecalho">Matricula: 2311958</h3>
+
+    <p>
+      Nesta pagina eu listarei alguns dos meus jogos favoritos. Claramente esses jogos são melhores então quem discordar esta errado.
+    </p>
+
+    <p>
+      Mas de qualquer modo, eu tenho o meu gosto e voce o seu (mas o meu é melhor) e este consiste em jogos mais para aventura e puzzle.
+    </p>
+
+    <div class= "imagem1">
+    <img src="https://files.meiobit.com/wp-content/uploads/2015/11/20151124xbox-controller.jpg" width= 400>
+    </div>
+
+    <h2 class="tituloLista">Lista dos meus jogos favoritos</h2>
+    <a style="font-size: 20px"href="/newjogo">Adicionar jogo</a>
+    <ol>
+      {% for jogo in jogos %}
+      <li style="font-size: 20px">
+        <img src= {{jogo.icone}} width=100>
+        <a class = "miniTitulo">{{jogo.nome}}</a>
+        
+        <a href ="/editjogo/{{jogo.id}}">Editar jogo</a>
+        <a href="/deljogo/{{jogo.id}}">Deletar jogo</a>
+        <ul>
+          {% for referencia in jogo.referencia_set.all %}
+          <li>
+            <i><a href={{referencia.link}} class="links">{{referencia.nome}}</a></i>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <h2 class="tituloLista">Tabela dos generos dos jogos</h2>
+    <table>
+      <tr class ="linha1">
+        <th>Aventura</th>
+        <th>Puzzle</th>
+        <th>Tiro</th>
+      </tr>
+      <tr class="linha2">
+        <td>Hollow knight</td>
+        <td>Baba is you</td>
+        <td>Borderlands 2</td>
+      </tr>
+      <tr class="linha1">
+        <td>Outer wilds</td>
+        <td>Heart and soul</td>
+        <td></td>
+      </tr>
+    </table>
+
+  </div>
+
+</body>
+
+</html>
